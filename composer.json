@@ -1,5 +1,5 @@
 {
-    "name": "kstools/module-todo",
+    "name": "kstools/magento2-todo-module",
     "description": "Todo tasks management",
     "type": "magento2-module",
     "license": "MIT",
