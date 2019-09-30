@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+	<route method="POST" url="/V1/kstools-todo/task">
+		<service class="Kstools\Todo\Api\TaskRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Kstools_Todo::Task_save"/>
+		</resources>
+	</route>
+	<route method="GET" url="/V1/kstools-todo/task/search">
+		<service class="Kstools\Todo\Api\TaskRepositoryInterface" method="getList"/>
+		<resources>
+			<resource ref="Kstools_Todo::Task_view"/>
+		</resources>
+	</route>
+	<route method="GET" url="/V1/kstools-todo/task/:taskId">
+		<service class="Kstools\Todo\Api\TaskRepositoryInterface" method="getById"/>
+		<resources>
+			<resource ref="Kstools_Todo::Task_view"/>
+		</resources>
+	</route>
+	<route method="PUT" url="/V1/kstools-todo/task/:taskId">
+		<service class="Kstools\Todo\Api\TaskRepositoryInterface" method="save"/>
+		<resources>
+			<resource ref="Kstools_Todo::Task_update"/>
+		</resources>
+	</route>
+	<route method="DELETE" url="/V1/kstools-todo/task/:taskId">
+		<service class="Kstools\Todo\Api\TaskRepositoryInterface" method="deleteById"/>
+		<resources>
+			<resource ref="Kstools_Todo::Task_delete"/>
+		</resources>
+	</route>
+</routes>

@@ -1,0 +1,22 @@
+<?php
+/**
+ * @var $block Tasks
+ */
+
+use Kstools\Todo\Block\Tasks;
+
+?>
+
+<h1><?= __('Tasks') ?></h1>
+<?php foreach ($block->getTasks() as $task): ?>
+    <?php /** @var Kstools\Todo\Model\Task  $task */ ?>
+    <?php $data = $task->getDataModel();?>
+<div class="todo-tasks-list">
+    <h2><?php echo $block->escapeHtml($data->getTitle()) ?></h2>
+    <p>
+        <strong><?= __('Due Date') ?>:</strong>
+        <?php echo $block->formatDate($data->getDueDate(), IntlDateFormatter::SHORT); ?>
+    </p>
+    <p><?php echo $block->escapeHtml($data->getDescription()); ?></p>
+</div>
+<?php endforeach; ?>

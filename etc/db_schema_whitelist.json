@@ -1,0 +1,13 @@
+{
+    "kstools_todo_task": {
+        "column": {
+            "task_id": true,
+            "title": true,
+            "description": true,
+            "due_date": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

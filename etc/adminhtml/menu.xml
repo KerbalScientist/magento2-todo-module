@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Kstools::top_level" module="Kstools_Todo" resource="Magento_Backend::content" sortOrder="0" title="Todo List"/>
+		<add action="kstools_todo/task/index" id="Kstools_Todo::kstools_todo_task" module="Kstools_Todo" parent="Kstools::top_level" resource="Magento_Backend::content" sortOrder="9999" title="Tasks"/>
+	</menu>
+</config>

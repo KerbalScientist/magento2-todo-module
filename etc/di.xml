@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Kstools\Todo\Api\TaskRepositoryInterface" type="Kstools\Todo\Model\TaskRepository"/>
+	<preference for="Kstools\Todo\Api\Data\TaskInterface" type="Kstools\Todo\Model\Data\Task"/>
+	<preference for="Kstools\Todo\Api\Data\TaskSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Kstools\Todo\Model\ResourceModel\Task\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">kstools_todo_task</argument>
+			<argument name="resourceModel" xsi:type="string">Kstools\Todo\Model\ResourceModel\Task\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="kstools_todo_task_listing_data_source" xsi:type="string">Kstools\Todo\Model\ResourceModel\Task\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>
